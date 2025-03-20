@@ -19,8 +19,8 @@ const ResultsPanel: React.FC<ResultsPanelProps> = ({
 }) => {
   return (
     <div 
-      className={`transition-all duration-500 w-full ${
-        activeTab === 'results' ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full hidden'
+      className={`results-panel transition-all duration-500 w-full ${
+        activeTab === 'results' ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full hidden md:block md:opacity-100 md:translate-x-0'
       }`}
     >
       <div className="border rounded-xl p-3 sm:p-5 shadow-md bg-white mx-auto w-full">

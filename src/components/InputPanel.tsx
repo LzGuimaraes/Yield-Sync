@@ -13,7 +13,7 @@ const InputPanel: React.FC<InputPanelProps> = ({ data, handleChange, activeTab }
   return (
     <div 
       className={`transition-all duration-500 w-full ${
-        activeTab === 'inputs' ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full hidden'
+        activeTab === 'inputs' ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full hidden md:block md:opacity-100 md:translate-x-0'
       }`}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mx-auto w-full">

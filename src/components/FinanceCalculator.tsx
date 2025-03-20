@@ -114,7 +114,10 @@ const FinanceCalculator: React.FC = () => {
   <div className="w-full max-w-7xl mx-auto bg-white rounded-xl sm:rounded-2xl shadow-xl overflow-hidden flex flex-col">
     <Header />
 
-    <TabSelector activeTab={activeTab} setActiveTab={setActiveTab} />
+    {/* TabSelector visível apenas em telas pequenas (mobile) */}
+    <div className="md:hidden">
+      <TabSelector activeTab={activeTab} setActiveTab={setActiveTab} />
+    </div>
 
     <div className="p-3 sm:p-4 md:p-6 flex flex-col gap-4">
       {/* Botões de Ação centralizados e responsivos */}

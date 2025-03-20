@@ -1,4 +1,5 @@
 import React from 'react';
+import { scrollToResults } from '../utils/scrollUtils';
 
 interface ActionButtonsProps {
   resetForm: () => void;
@@ -19,6 +20,12 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({ resetForm, loadSampleData
     className="px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-lg hover:from-blue-600 hover:to-indigo-700 transition shadow-md flex items-center"
   >
     <span className="mr-1">📋</span> Carregar Exemplo
+  </button>
+  <button 
+    onClick={scrollToResults}
+    className="px-4 py-2 bg-gradient-to-r from-green-500 to-teal-600 text-white rounded-lg hover:from-green-600 hover:to-teal-700 transition shadow-md flex items-center"
+  >
+    <span className="mr-1">📊</span> Verificar
   </button>
 </div>
 
