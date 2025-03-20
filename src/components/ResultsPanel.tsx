@@ -37,7 +37,17 @@ const ResultsPanel: React.FC<ResultsPanelProps> = ({
               onMouseLeave={() => setShowTooltip(null)}
             >
               <div className="flex justify-between items-center">
-                <span className="font-medium text-sm sm:text-base text-gray-800">{key}</span>
+                <span className="font-medium text-sm sm:text-base text-gray-800">
+                  {key === 'ROE' ? 'Retorno sobre PL' :
+                   key === 'ROA' ? 'Retorno sobre Ativos' :
+                   key === 'margemLiquida' ? 'Margem Líquida' :
+                   key === 'CAGR' ? 'Taxa de Crescimento' :
+                   key === 'dividaEbitda' ? 'Dívida/EBITDA' :
+                   key === 'liquidezCorrente' ? 'Liquidez Corrente' :
+                   key === 'PL' ? 'Preço/Lucro' :
+                   key === 'PVP' ? 'Preço/Valor Patr.' :
+                   key === 'dividendYield' ? 'Rendimento de Dividendos' : key}
+                </span>
                 <span className={`font-bold text-base sm:text-lg ${getValueColor(key, value)}`}>
                   {getValueIcon(key, value)} {' '}
                   {key === 'dividaEbitda' || key === 'liquidezCorrente' || key === 'PL' || key === 'PVP' 
