@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -13,28 +17,37 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Ajuste no corpo para responsividade */
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 1rem;
+}
+
+/* Responsividade do título */
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* Ajuste para links */
 a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
+  transition: color 0.3s ease-in-out;
 }
 a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
+/* Estilização e responsividade dos botões */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -43,17 +56,20 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
+  color: white;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color 0.25s, background-color 0.3s;
 }
 button:hover {
   border-color: #646cff;
+  background-color: #333;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* Modo claro */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -64,5 +80,23 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+    color: #213547;
+  }
+}
+
+/* Melhor responsividade para telas menores */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  body {
+    padding: 0.5rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 0.8em;
+    font-size: 1rem;
   }
 }
